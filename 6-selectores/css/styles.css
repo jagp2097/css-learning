@@ -1,0 +1,100 @@
+/* SELECTORES */
+
+/* 
+    Selectores simples
+        Selectores elementales
+            * -> Selector universal
+            Selector de tipo o de etiqueta -> Nombre de la etiqueta
+
+        Selectores de atributo
+            id -> id del elemento
+            clase -> clase del elemento
+            otros attrs
+                [attr]
+                [attr=valor]
+                [attr^=valor] => comprueba si el attr empieza con ese valor
+                [attr*=valor] => compruena que el contenido de ese attr contentga ese valor
+                [attr$=valor] => comprueba que el contenido de ese attr termine con ese valor
+                [attr|=valor]
+
+        Selectores compuestos
+            Selectores Agrupados -> se agrupan los selectores separados por comas y se escribe el estilo
+            una sola vez. No es buena idea bajar más de 2 niveles.
+
+            Selectores Combinadores
+                Selector descendiente -> Seleciona un elemento dentro de otro
+                Selector de hermano siguiente (+) -> Selecciona el hermano siguiente
+                Selector de hermanos siguientes (~) -> Selecciona a todos los hermanos siguientes
+                Selector de hijo directo (>) -> Selecciona solo los hijos directos
+        
+        Pseudoclases - Pseudoelementos
+*/
+
+/* * {
+    background-color: teal;
+}
+
+h3 {
+    color: yellow;
+}
+
+p {
+    color: lightcoral;
+} */
+
+/* #title {
+    background-color: darkkhaki;
+}
+
+.paragraph {
+    background-color: chartreuse;
+} */
+
+/* [href] {
+    color: seagreen;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+[href="google.com"] {
+    background-color: purple;
+}
+
+[href^="#color"] {
+    background-color: sandybrown;
+}
+
+[href*="modo"] {
+    background-color: darkred;
+}
+
+[href$="rojo"] {
+    background-color: turquoise;
+}
+
+[lang|="en"] {
+    background-color: darkorange;
+} */
+
+/* 
+.paragraph-1, 
+.paragraph-2,
+.paragraph-3 {
+    background-color: darkkhaki;
+} */
+
+div .paragraph-1 {
+    color: orangered;
+} 
+
+#title + p {
+    color: blueviolet;
+}
+
+div ~ span {
+    color: teal;
+}
+
+.container > b {
+    color: springgreen;
+}

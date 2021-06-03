@@ -1,0 +1,107 @@
+/* 
+    Margin: Es la propiedad que nos permite generar espacio entre los elementos.
+    Admite hasta 4 valores que van en el orden de las manecillas del reloj.
+    
+        4 valores -> margin: top right bottom left
+        3 valores -> margin: top left/right bottom
+        2 valores -> margin: top/bottom left/right
+        1 valor -> margin: top/rigth/bottom/left 
+
+    Padding: Es la propiedad que nos permite generar espacio interno entre el borde y la caja.
+    Admite hata 4 valores que van en el orden de las manecillas del reloj.
+
+        4 valores -> padding: top right bottom left
+        3 valores -> padding: top left/right bottom
+        2 valores -> padding: top/bottom left/right
+        1 valor -> padding: top/rigth/bottom/left 
+
+    - Usar margin cuando queramos separar nuestra caja de los elementos que la rodean.
+    - Usar padding cuando queramos aumentar el tamaño de la caja o separar los bordes del contenido,
+
+    Border: Es la propiedad que nos permite modificar el borde de la caja
+    Es un shorthand que agrupa 3 propiedades
+        border-width: ancho del borde
+            border-top-width
+            border-rigth-width
+            border-bottom-width
+            border-left-width
+        border-style: estilo del borde
+            none
+            hidden
+            dotted
+            dashed
+            solid
+            double
+            groove
+            ridge
+            inset
+            outset
+        border-color: color del borde
+            border-top-color
+            border-rigth-color
+            border-bottom-color
+            border-left-color
+
+*/
+
+/* Mala practica, en la mayoria de los casos el diseño necesita resetear todos los margenes ni los padings */
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    background-color: #333;
+    color: #fff;
+    margin: 0; /* recomendable para no tener espacios no deseados */
+}
+
+.header {
+    background-color: wheat;
+    color: darkcyan;
+    font-weight: 700;
+}
+
+/* 
+    - A los elementos en bloque si les podemos dar medidas con los attrs width y height
+    - los elementos block tiene los cuatro lados para añadir un margin
+    - Truco: podemos aplicar margenes automaticos a los block elements siempre y cuando tengan definidas un width
+    - Truco: podemos centrar un block element aplicando margin-left y margin-right en auto siempre y cuando tengan un
+      width definido
+    - Podemos aplicar los 4 valores de padding a los inline elements
+*/
+.block {
+    background-color: rosybrown;
+    width: 350px;
+    height: 120px;
+    /* margin: 0 auto; mala practica, puede sobreescribir margins de tu elemento */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 10px;
+}
+
+/* 
+    - los elementos en linea, el tamaño no determina su contenido.
+    - No podemos darles medidas con los attrs width y height
+    - los elementos inline solo tienen margenes horizontales
+    - Podemos aplicar los 4 valores de padding a los block elements
+
+*/
+.inline {
+    color: inherit;
+    background-color: peru;
+    margin-left: 35px;
+    padding: 12px 33px 40px;
+
+}
+
+.buttons {
+    background-color: aquamarine;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.button {
+    margin-left: 30px;
+    padding: 10px 30px;
+}
