@@ -1,0 +1,76 @@
+/*  ¿COMO FUNCIONA CSS? 
+    Especificidad -> Establece como de especifico es un selector para saber qué estilo aplicar.
+    
+    El calculo se realiza con la siguiente formula:
+
+        Etiquetas y pseudoelementos           0,0,1
+        Clases, atributos y pseudoclases      0,1,0
+        Ids                                   1,0,0
+        Estilos en linea                      1,0,0,0
+        !important LE GANA A TODO Y NO SE DEBE USAR NUNCA, UTILIZAR CLASES PARA APLICAR ESTILOS
+
+    CSS Specifity Graph Generator: nos ayuda a ver que tan bueno esta la escritura de nuestros CSS,
+    si hay muchos picos, tenemos problemas de especificidas, buscar que la grafica este lo más lineal
+    posible.
+
+    Cascada -> Funciona siempre que la especificidad sobre el elemento sea la misma.
+
+    Herencia -> Es la capacidad que tienen algunos elementos de heredar alguna propiedades de sus elementos
+    contenedores (padres, abuelos, etc.)
+
+*/
+
+/* h1.title#title {
+    background-color: tomato;
+}
+
+h1 {
+    background-color: yellowgreen;
+}
+
+.title {
+    background-color: violet;
+}
+
+#title {
+    background-color: rebeccapurple;
+}
+
+h1.title {
+    background-color: yellow;
+}
+
+h1#title {
+    background-color: hotpink;
+}
+ */
+
+body {
+    background-color: teal;
+}
+
+.title {
+    color: burlywood;
+}
+
+.text {
+    color: darkmagenta;
+}
+
+.link {
+    color: inherit; /* este valor hereda los estilos del elemento padre */
+}
+
+.list {
+    color: darkgray;
+}
+
+.list-item-extra {
+    color: initial; /* este valor ignora los estilos heredados y se aplican los estilos por defecto */
+}
+
+
+
+
+
+
