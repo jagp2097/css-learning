@@ -42,7 +42,17 @@
             border-bottom-color
             border-left-color
 
+        Box sizing: Es la propiedad que nos permite controlar el cálculo que hace el navegador a la hora de modificar las
+        propiedades content, padding y border. Los 2 valores que podemos darle son:
+            content box -> Valor por defecto
+            border-box -> Cálculo de tamaño del elemento incluyendo el padding y el border
+
 */
+
+/* Buena practica, utilizar el selector universal para aplicar el box sizing */
+* {
+    box-sizing: border-box;
+}
 
 /* Mala practica, en la mayoria de los casos el diseño necesita resetear todos los margenes ni los padings */
 /* * {

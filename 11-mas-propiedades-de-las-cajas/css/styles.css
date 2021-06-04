@@ -1,0 +1,51 @@
+/* 
+
+    Border-radius: Es la propiedad que nos permite redondear vertices de forma independiente.
+    Es un shorthand que engloba 4 propiedades:
+        border-top-left-radius
+        botder-top-right-radius
+        border-bottom-right-radius
+        border-bottom-left-radius
+
+    Si solo recibe un valor dibujara un circulo en cada vertice del radio que especifiquemos
+
+        - border-radius: 50px; -> circulo de 50px en cada vertice
+        - border-radius: 50px 100px; -> circulo de 50px en el vertice superior izquierdo y en el 
+        inferior derecho y de 100px en el superior derecho y en el inferior izquierdo
+        - border-radius: 50px 100px 200px; -> circulo de 50px en el vertice superior izquierdo, de 100px
+        en el superior derecho y en el inferior izquierdo y de 200px en el inferior derecho
+
+    Elipses
+        - border-top-left-radius: 50px 100px; -> Elipse con 50px en el radio X 
+        y 100px en el radio Y.
+        - Lo más recomendable para legibilidad es hacer las elipses en cada vertice del circulo (ejemplo arriba de 
+        esta linea) de manera independiente
+
+
+
+*/
+
+* {
+    box-sizing: border-box;
+    background-color: #e3d3;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: yellow;
+    /* border-radius: 30px; */
+    /* border-top-left-radius: 30px; */
+    /* border-bottom-right-radius: 25px; */
+    /* border-bottom-left-radius: 20px; */
+    /* border-radius: 15px 40px 50px; */
+    /* border-top-left-radius: 50px 100px; */
+    /* border-bottom-right-radius: 100px 50px; */
+    /* border-top-right-radius: 60px 80px; */
+    /* border-bottom-left-radius: 50px 45px; */
+    /* border-radius: 20px / 40px; elipse shorthand */
+    border-radius: 30px 15px 10px 50px / 20px 30px 20px 40px;
+}
