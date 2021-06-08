@@ -1,0 +1,1 @@
+*{box-sizing:content-box}body{background-color:tomato;margin:0}.border,.outline{background-color:seagreen;width:120px;height:60px;padding:10px 25px;margin-left:auto;margin-right:auto;margin-top:50px;margin-bottom:50px}.border{border:5px solid black}.outline{outline:5px solid black;outline-offset:-15px;border:5px solid darkslateblue}
