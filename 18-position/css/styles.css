@@ -57,11 +57,19 @@
         El contenido debe de generar un scroll y la propiedad overflow no debe de estar declarada
         para poder ver el comportamiento como "fixed".
 
+        z-index -> Es la propiedad que nos permite ordenar los elementos superpuestos para controlar 
+        cual se coloca por delante y cual por detrás. Para que funcione los elementos donde utilicemos
+        esta propiedad debe de estar posicionados (tener la prop position con un valor dif al de default).
+        - No es recomendable utilizar los valores de z index de manera consecutiva, enumerarlos de 10 en 10.
+        - Un elemento padre no puede ser sueperpuesto de un elemento hijo (no sirve el z-index), lo que si se 
+            puede es tener un hijo detras del padre y se logra añadiendo un z-index negativo al hijo y que el
+            padre no tenga un z-index declarado.
+
 */
 
 * {
     box-sizing: content-box;
-    background-color: rgb(96, 93, 97);
+    /* background-color: rgb(96, 93, 97); */
 }
 
 .box {
@@ -269,4 +277,58 @@ nav {
     top: 0;
     background-color: black;
     color: white;
+}
+
+/* z index */
+.body-z {
+    box-sizing: content-box;
+    background-color: rgb(96, 93, 97);
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+.container-z{
+    width: 420px;
+    height: 420px;
+    background-color: cadetblue;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+.boxz-1 {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    position: relative;
+    left: 350px;
+    z-index: -1 ;
+}
+
+.boxz-1-2 {
+    width: 180px;
+    height: 180px;
+    background-color: darkgreen;
+    position: relative;
+    left: 350px;
+    bottom: 15px;
+    z-index: -2 ;
+}
+
+.boxz-2 {
+    width: 100px;
+    height: 100px;
+    background-color: darkmagenta;
+    position: relative;
+    z-index: 10;
+    top: 52px;
+}
+
+.boxz-3 {
+    width: 150px;
+    height: 150px;
+    background-color: darkorchid;
+    position: relative;
+    bottom: 55px;
 }
