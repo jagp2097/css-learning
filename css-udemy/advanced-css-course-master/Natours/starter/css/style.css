@@ -142,6 +142,7 @@ body {
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
+    position: relative;
 }
 
 .btn:hover {
@@ -157,4 +158,55 @@ body {
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+/* Crea un elemento identico al elemento que se le aplica el pseudoelemento (::after), el
+elemento lo trata como un hijo
+*/
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBotton .5s ease-out;
+    animation-delay: .70s;
+
+     /* esta propiedad con valor backwards aplica los estilos especificados en 0% de la 
+     animación antes de que esta inicie*/
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBotton {
+    0% {
+        color: aqua;
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    80% {
+        color: yellowgreen;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
 }

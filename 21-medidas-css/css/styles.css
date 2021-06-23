@@ -20,5 +20,44 @@
         ch -> la medida del ancho del glifo "0" de la letra del elememto
         lh -> Altura de la linea del elemento
 
+    rem -> Corresponde a la medida de la 'm' de la raiz del documento (html)
+    1rem = 16px
+
+    em -> Corresponde a la medida de la 'm' del contexto donde nos encontremos
+
+    El estándar del tamaño de fuente por defecto en la raíz del documento es 16px, y 
+    NO ES RECOMENDABLE MODIFICARLO.
+    
+    NOTA: Tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de fuente)
+    
+    RECOMENDACIONES
+        - Para tamaños de fuentes, utilizar siempre rems.
+        - Si la medida que establezcamos tiene que crecer proporcionalmente al tamaño del
+        texto, utilizar siempre em.
+        - Si la medida siempre tiene que ser la misma y relativa al tamaño de fuente de la raíz,
+        utilizar rem.
 
 */
+
+body {
+    background-color: #333;
+    color: lightcoral;
+}
+
+.title {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.link {
+    /* box model */
+    padding: 1em 2em;
+
+    /* texto */
+    color: #333;
+    font-size: 1rem;
+
+    /* visuales */
+    background-color: lightcoral;
+    border-radius: .5em;
+}
