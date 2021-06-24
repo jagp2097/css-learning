@@ -1,0 +1,334 @@
+/*
+    La propiedad position nos permite posicionar los elementos. Hay algunos conceptos
+    que se deben conoce para entender position.
+
+    Flujo de renderizado -> por norma general los elementos se dibujan de izquierda a derecha
+    y de arriba a abajo. El punto 0,0 de los elementos, por norma general, es la esquina superior izquierda
+
+    Espacio reservado -> es el espacio que tiene un elemento asignado en el navegador.
+
+    Elemento posicionado -> significa que un elemento tiene la propiedad position con un valor distinto
+    de "static", que es el valor que tiene esta propiedad por defecto.
+
+    Stackin context -> contexto de apilamiento. Es el orden en el que se apilarán las cajas que se
+    superponen, dentro del contenedor.
+
+    Al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los 
+    elementos en los tres ejes:
+
+        top -> el elemento se moverá desde la parte superior la distancia que le hayamos
+        indicando.
+
+        right -> el elemento se moverá desde la parte derecha la distancia que le hayamos
+        indicando.
+
+        bottom -> el elemento se moverá desde la parte inferior la distancia que le hayamos 
+        indicado.
+
+        left -> el elemento se moverá desde la parte izquierda la distancia que le hayamos
+        indicado.
+
+        z-index -> nos permite mover el elemento en el contexto de apilamiento (eje z)
+
+        NOTA: si a un elemento le declaramos la propiedad top y/o left, las propiedades
+        bottom y/o right no funcionaran.
+
+    Los posibles valores que le podemos dar a position son:
+
+        static -> es el valor que tiene por defecto un elemento, con este valor el elemento no
+        esta posicionado y no podremos moverlo.
+
+        Relative -> el elemento mantendra su posición y medidas en el flujo de renderizado y 
+        mantendra su espacio reservado. Si lo movemos lo hará usando su posición en el html como
+        punto de referencia 
+
+        Absolute -> el elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el
+        elemento padre posicionado como referencia, siempre y cuando este elemento contenedor este posicionado. 
+        Si no tiene ninguno, usará el elemento html de referencia.
+
+        Fixed -> el elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el 
+        elemento html de referencia, y además se quedará fijo en esa posición aunque hagamos scroll.
+
+        Sticky -> es una mezcla de position relative y "fixed". Con este tipo de posicionamiento los 
+        valores top, left, bottom y right no sirven para mover el elemento, si no para indicarle en que
+        punto pasará a tener un comportamiento de posicionamiento fixed, hasta llegar a ese punto se 
+        comportará como si no tuviera posicionamiento, aunque si contará como posicionado si necesitaramos
+        colocar otro elemento respecto a el (absolute).
+        El contenido debe de generar un scroll y la propiedad overflow no debe de estar declarada
+        para poder ver el comportamiento como "fixed".
+
+        z-index -> Es la propiedad que nos permite ordenar los elementos superpuestos para controlar 
+        cual se coloca por delante y cual por detrás. Para que funcione los elementos donde utilicemos
+        esta propiedad debe de estar posicionados (tener la prop position con un valor dif al de default).
+        - No es recomendable utilizar los valores de z index de manera consecutiva, enumerarlos de 10 en 10.
+        - Un elemento padre no puede ser sueperpuesto de un elemento hijo (no sirve el z-index), lo que si se 
+            puede es tener un hijo detras del padre y se logra añadiendo un z-index negativo al hijo y que el
+            padre no tenga un z-index declarado.
+
+*/
+
+* {
+    box-sizing: content-box;
+    /* background-color: rgb(96, 93, 97); */
+}
+
+.box {
+    width: 300px;
+    height: 200px;
+}
+
+.box-sm {
+    width: 90px;
+    height: 75px;
+}
+
+.box-1 {
+    background-color: rosybrown;
+    position: relative;
+    top: 80px;
+    left: 665px;
+    border: 5px solid rgb(92, 30, 63);
+    border-radius: 180px 20px / 165px 20px;
+}
+
+.box-2 {
+    background-color: deeppink;
+    position: relative;
+    bottom: 120px;
+    left: 365px;
+    border: 5px solid rgb(92, 30, 63);
+    border-radius: 20px 180px / 20px 165px;
+}
+
+.box-1-op {
+    background-color: rosybrown;
+    border-radius: 180px 20px / 165px 20px;
+    position: relative;
+    bottom: 285px;
+    left: 365px;
+    border: 5px solid rgb(92, 30, 63);
+}
+
+.box-2-op {
+    background-color: deeppink;
+    position: relative;
+    bottom: 500px;
+    left: 665px;
+    border-radius: 20px 180px / 20px 165px;
+    border: 5px solid rgb(92, 30, 63);
+}
+
+.box-3 {
+    background-color: rgb(70, 70, 70);
+    /* position: none; */
+    position: relative;
+    border-radius: 90px 15px / 90px 15px;
+    bottom: 216px;
+    left: 673px;
+    border: 5px solid rgb(212, 170, 193);
+}
+
+.box-4 {
+    background-color: rgb(70, 70, 70);
+    /* position: none; */
+    position: relative;
+    border-radius: 15px 90px / 15px 90px;
+    bottom: 300px;
+    left: 575px;
+    border: 5px solid rgb(212, 170, 193);
+}
+
+.box-3-op {
+    background-color: rgb(70, 70, 70);
+    /* position: none; */
+    position: relative;
+    border-radius: 15px 90px / 15px 90px;
+    bottom: 720px;
+    left: 665px;
+    border: 5px solid rgb(212, 170, 193);
+}
+
+.box-4-op {
+    background-color: rgb(70, 70, 70);
+    /* position: none; */
+    position: relative;
+    border-radius: 90px 15px / 90px 15px;
+    bottom: 805px;
+    left: 575px;
+    border: 5px solid rgb(212, 170, 193);
+}
+
+/* Absolute */
+
+.container {
+    width: 550px;
+    height: 250px;
+}
+
+.cont-1 {
+    position: relative;
+    background-color: wheat;
+}
+
+.cont-2 {
+    position: relative;
+    background-color: teal;
+    top: 100px;
+    left: 420px;
+}
+
+.box-abs {
+    text-align: center;
+    width: 150px;
+    height: 150px;
+}
+
+.box-1-abs {
+    background-color: coral;
+    position: absolute;
+    top: 60px;
+    left: 270px;
+}
+
+.box-2-abs {
+    background-color: darkturquoise;
+    position: absolute;
+    top: 80px;
+    left: 90px;
+}
+
+/* 
+    En los elementos inline, al posicionarlos en absolute, nos permite modificar el width y heigh 
+    y otras propiedades que se modifican a los elmementos inline cuando se hacen en display block
+*/
+.link-1 {
+    background-color: darkmagenta;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    left: 890px;
+    top: 100px;
+}
+
+.link-2 {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    position: absolute;
+    width: 300px;
+    height: 20px;
+    top: 620px;
+    left: 790px;
+}
+
+/* Fixed */
+.body-fixed {
+    box-sizing: content-box;
+    background-color: rgb(96, 93, 97);
+    margin: 0;
+    padding-top: 60px;
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 25px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+nav {
+    background-color: black;
+}
+
+/* STICKY */
+.body-sticky {
+    box-sizing: content-box;
+    background-color: rgb(96, 93, 97);
+    margin: 0;
+    padding: 0;
+}
+
+.img-sticky {
+    width: 100%;
+}
+
+.header-sticky {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    /* height: 15em; */
+    /* position: sticky;
+    top: 0; */
+}
+
+/* .menu {
+    position: sticky;
+    top: 0;
+} */
+
+.article-title {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: white;
+}
+
+/* z index */
+.body-z {
+    box-sizing: content-box;
+    background-color: rgb(96, 93, 97);
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+.container-z{
+    width: 420px;
+    height: 420px;
+    background-color: cadetblue;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+.boxz-1 {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+    position: relative;
+    left: 350px;
+    z-index: -1 ;
+}
+
+.boxz-1-2 {
+    width: 180px;
+    height: 180px;
+    background-color: darkgreen;
+    position: relative;
+    left: 350px;
+    bottom: 15px;
+    z-index: -2 ;
+}
+
+.boxz-2 {
+    width: 100px;
+    height: 100px;
+    background-color: darkmagenta;
+    position: relative;
+    z-index: 10;
+    top: 52px;
+}
+
+.boxz-3 {
+    width: 150px;
+    height: 150px;
+    background-color: darkorchid;
+    position: relative;
+    bottom: 55px;
+}

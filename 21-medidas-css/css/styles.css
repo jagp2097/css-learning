@@ -1,0 +1,83 @@
+/* 
+    Las medidas en CSS se pueden agrupar en dos grupos: absolutas y relativas
+
+    Las medidas absolutas NO CAMBIAN y siempre mantendran su tamaño independiente
+    del dispositivo o la interaccion del usuario.
+
+    La más usada es px cuya medida es 1/96 de 1in, pero exiten otras como:
+        cm -> 1cm = 96px/2.54cm
+        mm -> 1mm = 1/10 de 1 cm
+        Q(cuarto de mm) -> 1Q = 1/40 de 1cm
+        in(inches, pulgadas) -> 1in = 2.54cm = 96px
+        pc(picas) -> 1pc = 1/16 de 1in
+        pt(puntos) -> 1pt = 1/72 de 1in
+
+    Las medidas relativas SIEMPRE dependen de un contexto son los que se recomienda 
+    utilizar en la gran mayoria de ocasiones porque nos van a permitir que todos los
+    elementos escalesn proporcionalmente.
+    Los mas usados son em. rem, %, vw, vh, vmin y vmax aunque tenemos otras como:
+        ex -> Altuea de x de la fuente del elemento
+        ch -> la medida del ancho del glifo "0" de la letra del elememto
+        lh -> Altura de la linea del elemento
+
+    rem -> Corresponde a la medida de la 'm' de la raiz del documento (html)
+    1rem = 16px
+
+    em -> Corresponde a la medida de la 'm' del contexto donde nos encontremos
+
+    El estándar del tamaño de fuente por defecto en la raíz del documento es 16px, y 
+    NO ES RECOMENDABLE MODIFICARLO.
+    
+    NOTA: Tanto "em" como "rem" se calcula en base a la propiedad font-size (tamaño de fuente)
+    
+    RECOMENDACIONES em y rem
+        - Para tamaños de fuentes, utilizar siempre rems.
+        - Si la medida que establezcamos tiene que crecer proporcionalmente al tamaño del
+        texto, utilizar siempre em.
+        - Si la medida siempre tiene que ser la misma y relativa al tamaño de fuente de la raíz,
+        utilizar rem.
+
+    % -> Cuando usamos porcentage usamos de referencia el tamaño del contenedor y el navegador
+    calcula ese porcentage. Esto no ocurre cuando usamos transform
+
+    auto -> Cuando usamos auto le pedimos al navegador que calcule en función del espacio 
+    disponible
+
+*/
+
+body {
+    background-color: #333;
+    color: lightcoral;
+    margin: 0;
+}
+
+.title {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.link {
+    /* box model */
+    padding: 1em 2em;
+
+    /* texto */
+    color: #333;
+    font-size: 1rem;
+
+    /* visuales */
+    background-color: lightcoral;
+    border-radius: .5em;
+}
+
+.box {
+    width: 75%;
+    height: 300px;
+    background-color: lavender;
+}
+
+.box-children {
+    width: auto;
+    height: 150px;
+    background-color: teal;
+    margin-left: 200px;
+}
