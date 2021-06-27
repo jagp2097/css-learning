@@ -43,12 +43,39 @@
     auto -> Cuando usamos auto le pedimos al navegador que calcule en función del espacio 
     disponible
 
+
+    Limitadores al ancho y alto
+    Cuando establecemos un width y/o un height con una medida que es relativa, es posible que
+    no queremos que se respete esa medida en todos los casos.
+    Para ello tenemos propiedades que limitan esas medidas:
+        min-width: Indica el ancho minimo que puede alcanzar el elemento
+        max-width: Indica el ancho máximo que puede alcanzar el elemento
+        min-height: Indica el alto minimo que puede alcanzar el elemento
+        max-heigth: Indica el alti máximo que puede alcanzar el elemento.
+
+    - Truco para colocar un elemento hasta abajo de la página: posicionar el elemento que se quiere
+    poner hasta el final con la propiedad de absolute, un bottom de 0 y al body darle un min-height de
+    100 vh y posicionarlo relative.
+
 */
+* {
+    box-sizing: border-box;
+}
 
 body {
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
     background-color: #333;
     color: lightcoral;
-    margin: 0;
+    border: 4px solid red;
+}
+
+.header {
+    background-color: yellow;
+    text-align: center;
+    padding: 2rem 0;
+    height: 5vh;
 }
 
 .title {
@@ -70,7 +97,8 @@ body {
 }
 
 .box {
-    width: 75%;
+    width: 100%;
+    max-width: 650px;
     height: 300px;
     background-color: lavender;
 }
@@ -80,4 +108,14 @@ body {
     height: 150px;
     background-color: teal;
     margin-left: 200px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: yellowgreen;
+    color: white;
+    text-align: center;
 }
