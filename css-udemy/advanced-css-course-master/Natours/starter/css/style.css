@@ -45,19 +45,19 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* x, y */
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     left: 4rem;
     top: 4rem;
 }
 
-.logo {
+.header__logo {
     width: 4rem;
 
     animation: fadeInLogo 1.3s ease-out;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -78,7 +78,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
@@ -92,7 +92,7 @@ body {
     /* animation-iteration-count: 3; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
@@ -166,7 +166,7 @@ body {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -187,7 +187,7 @@ elemento lo trata como un hijo
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -196,7 +196,7 @@ elemento lo trata como un hijo
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBotton .5s ease-out;
     animation-delay: .70s;
 
