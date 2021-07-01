@@ -37,11 +37,38 @@
         - Si la medida siempre tiene que ser la misma y relativa al tamaño de fuente de la raíz,
         utilizar rem.
 
-    % -> Cuando usamos porcentage usamos de referencia el tamaño del contenedor y el navegador
-    calcula ese porcentage. Esto no ocurre cuando usamos transform
 
-    auto -> Cuando usamos auto le pedimos al navegador que calcule en función del espacio 
-    disponible
+    WIDTH:
+        % -> Cuando usamos porcentage usamos de referencia el tamaño del contenedor y el navegador
+        calcula ese porcentage. Esto no ocurre cuando usamos transform
+
+        auto -> Cuando usamos auto le pedimos al navegador que calcule en función del espacio 
+        disponible
+
+    HEIGHT:
+        % -> Cuando estamos dentro de un contenedor, este tiene que tener un alto declarado, si no
+        no podrá calcular el porcentaje. Si se le aplica una medida con porcentaje se sustituira 
+        automaticamente por auto.
+
+        auto -> Cuando utilizamos auto el alto lo calculará el navegador con base al contenido del
+        elemento
+
+    NOTA: Height es una propidad que tienes que usar con mucho cuidado. Si no es necesario establecer
+    un alto, dejar que el contenido sea el que decida el alto del elemento.
+
+    VIEWPORT
+        El viewport es el área útil donde se mostrará la página web. IMPORTANTE, hay que tener en cuenta
+        que es el área visible sin hacer scroll.
+        Podemos usar el viewport como medida de varias formas:
+            vw -> hace referencia al ancho del viewport
+            vh -> hace referencia al alto del viewport
+            vmax -> utiliza el valor más grande entre el ancho y el alto del viewport
+            vmin .> utiliza el valor más pequeño entre el ancho y el alto del viewport
+
+            1vw = 1% del ancho del vp
+            1vh = 1% del alto del vp
+            1vmin = 1% del valor que sea más pequeño del viewport
+            1vmax = 1% del valor que sea más grande del viewport
 
 */
 
@@ -70,14 +97,21 @@ body {
 }
 
 .box {
-    width: 75%;
+    width: auto;
     height: 300px;
     background-color: lavender;
+    margin: 0 50px;
 }
 
 .box-children {
     width: auto;
     height: 150px;
     background-color: teal;
-    margin-left: 200px;
+    margin-left: 10%;
+}
+
+.header {
+    background-color: rebeccapurple;
+    text-align: center;
+    height: 25vh;
 }
