@@ -1,0 +1,60 @@
+
+/* @keyframes Identificador */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-1.2rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(1.5rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveInBotton {
+    0% {
+        color: aqua;
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+
+    80% {
+        color: yellowgreen;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
