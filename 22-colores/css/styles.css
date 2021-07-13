@@ -7,19 +7,34 @@
     Keywords que representan color: https://www.w3.org/wiki/CSS/Properties/color/keywords
     IMPORTANTE: "transparent" tambien es considerado un color
 
+    Current color: Es una palabra reservada que se puede utilizar en lugar de cualquier
+    valor de la propiedad color y usara el valor ya sea establecido o heredado 
+    en la propiedad color
+
 */
 
 body {
     margin: 0;
-    background-color: #333;
+    background-color: darkkhaki;
 }
 
-.box {
+.box-triangulo {
     /* dibujar un triangulo con bordes */
     border-bottom: 300px solid seashell; /* direccion del pico contrario (top hacia abajo) */
     border-right: 200px solid transparent;
     border-left: 200px solid transparent;
-    /* width: 300px; */
-    /* height: 300px; */
-    /* background-color: moccasin; */
+}
+
+.main {
+    color: rgb(99, 24, 105);
+    background-color: currentColor;
+    /* color:deeppink; */
+}
+
+.box {
+    background-color: deepskyblue;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    top: 300px;
 }
